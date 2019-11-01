@@ -85,4 +85,22 @@ public class Massive1DLevelB {
         }
         return maxCountElement;
     }
+
+    /*38*/
+    public int[][] findSumPairs(int[] massive,int sumNum){
+        int [][] resultSet = new int[massive.length / 2][2];
+        int pairIndex = 0;
+        for (int i = 0; i < massive.length-1; i++) {
+            for (int j = i+1; j < massive.length; j++) {
+                if((massive[i]+massive[j])==sumNum) {
+                    resultSet[pairIndex][0] = massive[i];
+                    resultSet[pairIndex][1] = massive[j];
+                    pairIndex++;
+                }
+
+
+            }
+        }
+        return Arrays.copyOfRange(resultSet,0,pairIndex);
+    }
 }

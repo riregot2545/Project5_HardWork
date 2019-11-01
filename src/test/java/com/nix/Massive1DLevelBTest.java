@@ -41,4 +41,15 @@ public class Massive1DLevelBTest {
         int[] massive = {-8, 4, 5, 6,5,6,3,2,7,6,9,4,1,7,4};
         Assert.assertEquals(4,mcLevelB.getCommonNum(massive));
     }
+
+    @Test
+    public void findSumPairs() {
+        int[] massive = {-8, 4, 5, 6};
+        int[][] sumResult = mcLevelB.findSumPairs(massive,-2);
+        int[][] expectedResult = {{-8,6}};
+        for (int i = 0; i < expectedResult.length; i++) {
+            Assert.assertArrayEquals(expectedResult[i],sumResult[i]);
+        }
+
+    }
 }
