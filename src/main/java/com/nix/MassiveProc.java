@@ -48,4 +48,14 @@ public class MassiveProc {
         }
     }
 
+    /*15*/
+    public void printBeforeZero(int [] massive){
+        int i = 0;
+        for (; massive[i]!=0; i++) {
+            System.out.println("Element " + i + ":" + massive[i]);
+        }
+        System.out.println("Element "+i+":"+massive[i]);
+    }
+    
+
 }

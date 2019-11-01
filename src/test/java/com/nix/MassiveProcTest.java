@@ -45,4 +45,10 @@ public class MassiveProcTest {
         Assert.assertArrayEquals(new int[]{6,3,13,2,23,5,1,6},massiveEven);
         Assert.assertArrayEquals(new int[]{6,3,13,2,23,5,6},massiveOdd);
     }
+
+    @Test
+    public void printBeforeZero() {
+        int[] massiveOdd = {3,6,2,13,0,23,6};
+        mcProc.printBeforeZero(massiveOdd);
+    }
 }
