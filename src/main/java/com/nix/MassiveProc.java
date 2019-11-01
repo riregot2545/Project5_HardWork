@@ -11,5 +11,16 @@ public class MassiveProc {
        return 0;
     }
 
+    /*7*/
+    public int replaceByZ(int[] massive, int Z){
+        int replaceNum = 0;
+        for (int i = 0; i < massive.length; i++) {
+            if(massive[i]>Z) {
+                massive[i] = Z;
+                replaceNum++;
+            }
+        }
+        return replaceNum;
+    }
 
 }
