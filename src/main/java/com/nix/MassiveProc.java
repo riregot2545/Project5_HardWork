@@ -39,5 +39,13 @@ public class MassiveProc {
         massive[maxValueIndex] = massive[minValueIndex];
         massive[minValueIndex] = temp;
     }
+    /*13*/
+    public void replaceOddAndEven(int [] massive){
+        for (int i = 0; i < massive.length-1; i+=2) {
+            int temp = massive[i+1];
+            massive[i+1] = massive[i];
+            massive[i] = temp;
+        }
+    }
 
 }
