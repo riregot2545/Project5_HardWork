@@ -3,11 +3,9 @@ package com.nix;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+public class Massive1DLevelATest {
 
-public class MassiveProcTest {
-
-    MassiveProc mcProc = new MassiveProc();
+    Massive1DLevelA mcProc = new Massive1DLevelA();
     @Test
     public void getFirstSign() {
         int[] negativeFirst = new int[]{-3, 3, 4};

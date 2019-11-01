@@ -1,6 +1,6 @@
 package com.nix;
 
-public class MassiveProc {
+public class Massive1DLevelA {
 
     /*3*/
     public int getFirstSign(int[] massive){
@@ -56,6 +56,6 @@ public class MassiveProc {
         }
         System.out.println("Element "+i+":"+massive[i]);
     }
-    
+
 
 }
