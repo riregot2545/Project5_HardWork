@@ -23,4 +23,21 @@ public class MassiveProc {
         return replaceNum;
     }
 
+    /*10*/
+    public void replaceMaxAndMin(double[] massive){
+        int maxValueIndex = 0;
+        int minValueIndex = 0;
+
+        for (int i = 0; i < massive.length; i++) {
+            if(massive[i]>massive[maxValueIndex])
+                maxValueIndex = i;
+            if(massive[i]<massive[minValueIndex])
+                minValueIndex = i;
+        }
+
+        double temp = massive[maxValueIndex];
+        massive[maxValueIndex] = massive[minValueIndex];
+        massive[minValueIndex] = temp;
+    }
+
 }

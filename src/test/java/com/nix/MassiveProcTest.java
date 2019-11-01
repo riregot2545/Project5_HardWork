@@ -19,4 +19,13 @@ public class MassiveProcTest {
     public void replaceByZ() {
         Assert.assertEquals(4,mcProc.replaceByZ(new int[]{3,6,2,13,5,23,6,1},5));
     }
+
+    @Test
+    public void replaceMaxAndMin() {
+        double[] mass = {3f,6f,2f,7f,8f,23f,5f};
+        double[] replacedMass = {3f,6f,23f,7f,8f,2f,5f};
+        mcProc.replaceMaxAndMin(mass);
+
+        Assert.assertArrayEquals(replacedMass,mass,0f);
+    }
 }
