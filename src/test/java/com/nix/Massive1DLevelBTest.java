@@ -35,4 +35,10 @@ public class Massive1DLevelBTest {
         int[] massive = {-8, 4, 5, 6};
         Assert.assertArrayEquals(new int[]{-8,1,4,5,6},mcLevelB.insertIntoSequence(massive,1));
     }
+
+    @Test
+    public void getCommonNum() {
+        int[] massive = {-8, 4, 5, 6,5,6,3,2,7,6,9,4,1,7,4};
+        Assert.assertEquals(4,mcLevelB.getCommonNum(massive));
+    }
 }

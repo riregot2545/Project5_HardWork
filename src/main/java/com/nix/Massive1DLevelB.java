@@ -62,4 +62,27 @@ public class Massive1DLevelB {
         }
         return newMassive;
     }
+
+    /*33*/
+    public int getCommonNum(int[] massive){
+        Arrays.sort(massive);
+        int startElement = massive[0];
+        int maxCountElement = startElement;
+        int maxCount = 1;
+        int currentCount =1;
+        for (int i = 1; i < massive.length; i++) {
+            if(massive[i]==startElement)
+                currentCount++;
+            else {
+                startElement = massive[i];
+                if(maxCount<currentCount){
+                    maxCountElement = massive[i-1];
+                    maxCount = currentCount;
+                }else if(maxCount==currentCount)
+                    maxCountElement = Math.min(maxCountElement, massive[i-1]);
+                currentCount = 0;
+            }
+        }
+        return maxCountElement;
+    }
 }
