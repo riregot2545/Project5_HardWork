@@ -52,4 +52,11 @@ public class Massive1DLevelBTest {
         }
 
     }
+
+    @Test
+    public void findNumsWithEndK() {
+        int[] massive = {-84, 46, 57, 63,55,66,37,22,74,62,99,42,19,72,42};
+        int[] expectedMassive = {22,62,42,72,42};
+        Assert.assertArrayEquals(expectedMassive,mcLevelB.findNumsWithEndK(massive,2));
+    }
 }

@@ -103,4 +103,16 @@ public class Massive1DLevelB {
         }
         return Arrays.copyOfRange(resultSet,0,pairIndex);
     }
+    /*45*/
+    public int[] findNumsWithEndK(int[] massive, int K){
+        int [] resultMassive = new int[massive.length];
+        int resultMassiveIndex = 0;
+        for (int i = 0; i < massive.length; i++) {
+            if(massive[i]%10==K) {
+                resultMassive[resultMassiveIndex] = massive[i];
+                resultMassiveIndex++;
+            }
+        }
+        return Arrays.copyOfRange(resultMassive,0,resultMassiveIndex);
+    }
 }
