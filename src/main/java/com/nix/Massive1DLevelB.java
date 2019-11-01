@@ -1,6 +1,27 @@
 package com.nix;
 
+import java.util.Arrays;
+
 public class Massive1DLevelB {
+
+    public int getMaxElement(int[] massive){
+        int maxElement = Integer.MIN_VALUE;
+        for (int num :
+                massive) {
+            if (maxElement < num)
+                maxElement = num;
+        }
+        return maxElement;
+    }
+    public int getMinElement(int[] massive){
+        int minElement = Integer.MAX_VALUE;
+        for (int num :
+                massive) {
+            if (minElement > num)
+                minElement = num;
+        }
+        return minElement;
+    }
     /*23*/
     public void moveOneAndZero(int[] massive){
         //Count sort method
@@ -20,16 +41,25 @@ public class Massive1DLevelB {
     }
     /*24*/
     public void replaceAbsGreaterMax(int [] massive){
-        int maxElement = Integer.MIN_VALUE;
-        for (int num :
-                massive) {
-            if (maxElement < num)
-                maxElement = num;
-        }
+        int maxElement = getMaxElement(massive);
         for (int i = 0; i < massive.length; i++) {
             if(Math.abs(massive[i])>maxElement){
                 massive[i] = 0;
             }
         }
+    }
+    /*28*/
+    public int[] insertIntoSequence(int[] massive,int b){
+        int [] newMassive = new int[massive.length+1];
+        boolean isInserted = false;
+        for (int i = 0,j=0; i < newMassive.length; i++,j++) {
+            if(!isInserted && b<=massive[j]) {
+                newMassive[i] = b;
+                isInserted = true;
+                i++;
+            }
+            newMassive[i] = massive[j];
+        }
+        return newMassive;
     }
 }

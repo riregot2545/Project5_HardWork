@@ -21,4 +21,18 @@ public class Massive1DLevelBTest {
         mcLevelB.replaceAbsGreaterMax(massive);
         Assert.assertArrayEquals(new int[]{0,5,2,0,3,6,4},massive);
     }
+
+    @Test
+    public void getMaxElement() {
+    }
+
+    @Test
+    public void getMinElement() {
+    }
+
+    @Test
+    public void insertIntoSequence() {
+        int[] massive = {-8, 4, 5, 6};
+        Assert.assertArrayEquals(new int[]{-8,1,4,5,6},mcLevelB.insertIntoSequence(massive,1));
+    }
 }
