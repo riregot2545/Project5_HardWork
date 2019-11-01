@@ -59,4 +59,13 @@ public class Massive1DLevelBTest {
         int[] expectedMassive = {22,62,42,72,42};
         Assert.assertArrayEquals(expectedMassive,mcLevelB.findNumsWithEndK(massive,2));
     }
+
+    @Test
+    public void getAgeGroups() {
+        int[] massive = {84, 46, 57, 63,55,66,37,22,74,62,99,42,19,72,42};
+        int[] actual =  mcLevelB.getAgeGroups(massive);
+        for (int i = 0; i < actual.length; i++) {
+            System.out.println("Людей в категории от "+(i*10)+" до "+(i*10+10)+":"+actual[i]);
+        }
+    }
 }

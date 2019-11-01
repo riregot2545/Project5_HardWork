@@ -115,4 +115,18 @@ public class Massive1DLevelB {
         }
         return Arrays.copyOfRange(resultMassive,0,resultMassiveIndex);
     }
+
+    /*49*/
+    public int[] getAgeGroups(int[] massive){
+        Arrays.sort(massive);
+        int[] ageGroups = new int[massive[massive.length-1]/10+1];
+        Arrays.fill(ageGroups,0);
+        int groupIndex = 0;
+        for (int i = 0; i < massive.length; i++) {
+            if(massive[i]>(groupIndex+1)*10)
+                groupIndex++;
+            ageGroups[groupIndex]++;
+        }
+        return ageGroups;
+    }
 }
