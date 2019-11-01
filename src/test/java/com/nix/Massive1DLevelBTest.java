@@ -14,4 +14,11 @@ public class Massive1DLevelBTest {
         mcLevelB.moveOneAndZero(massive);
         Assert.assertArrayEquals(new int[]{0,0,0,1,1,1},massive);
     }
+
+    @Test
+    public void replaceAbsGreaterMax() {
+        int[] massive = {-8, 5, 2, -7, 3, 6, 4};
+        mcLevelB.replaceAbsGreaterMax(massive);
+        Assert.assertArrayEquals(new int[]{0,5,2,0,3,6,4},massive);
+    }
 }

@@ -18,4 +18,18 @@ public class Massive1DLevelB {
             massive[i] = 1;
         }
     }
+    /*24*/
+    public void replaceAbsGreaterMax(int [] massive){
+        int maxElement = Integer.MIN_VALUE;
+        for (int num :
+                massive) {
+            if (maxElement < num)
+                maxElement = num;
+        }
+        for (int i = 0; i < massive.length; i++) {
+            if(Math.abs(massive[i])>maxElement){
+                massive[i] = 0;
+            }
+        }
+    }
 }
