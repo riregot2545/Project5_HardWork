@@ -86,4 +86,28 @@ public class Massive1DLevelC {
         }
         return Arrays.copyOfRange(massive,Math.min(maxLengthPart[0],maxLengthPart[1]),Math.max(maxLengthPart[0],maxLengthPart[1])+1);
     }
+
+    /*67*/
+    public int[] moveMass(int[] massive, int moveNums) {
+
+        for (int i = 0; i < Math.abs(moveNums); i++) {
+            if(moveNums>0) {
+                int lastElement = massive[massive.length - 1];
+                for (int j = 0; j < massive.length; j++) {
+                    int current = massive[j];
+                    massive[j] = lastElement;
+                    lastElement = current;
+                }
+            }else {
+                int lastElement = massive[0];
+                for (int j = massive.length-1; j>-1; j--) {
+                    int current = massive[j];
+                    massive[j] = lastElement;
+                    lastElement = current;
+                }
+            }
+
+        }
+        return massive;
+    }
 }

@@ -37,4 +37,13 @@ public class Massive1DLevelCTest {
         expected = new int[]{4,2,3,9,4};
         assertArrayEquals(expected,mcLevelC.findMaxGates(massive));
     }
+
+    @Test
+    public void moveMass() {
+        int[] massive = {1,2,3,4,5,6,7,8,9,10};
+        int[] expectedA = {6,7,8,9,10,1,2,3,4,5};
+        int[] expectedB = {8,9,10,1,2,3,4,5,6,7};
+        assertArrayEquals(expectedA,mcLevelC.moveMass(massive,5));
+        assertArrayEquals(expectedB,mcLevelC.moveMass(massive,-2));
+    }
 }
