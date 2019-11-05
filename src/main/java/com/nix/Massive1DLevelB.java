@@ -129,4 +129,27 @@ public class Massive1DLevelB {
         }
         return ageGroups;
     }
+
+    /*43*/
+    public int sumBetweenMinMax(int[] massive){
+        int max = Integer.MIN_VALUE;
+        int maxCord = 0;
+        int min = Integer.MAX_VALUE;
+        int minCord = 0;
+        int sum = 0;
+        for (int i = 0; i < massive.length; i++) {
+            if(massive[i]>max){
+                max = massive[i];
+                maxCord = i;
+            }
+            if(massive[i]<min){
+                min = massive[i];
+                minCord = i;
+            }
+        }
+        for (int i = Math.min(maxCord,minCord)+1; i < Math.max(maxCord,minCord); i++) {
+            sum+=massive[i];
+        }
+        return sum;
+    }
 }

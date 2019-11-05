@@ -68,4 +68,10 @@ public class Massive1DLevelBTest {
             System.out.println("Людей в категории от "+(i*10)+" до "+(i*10+10)+":"+actual[i]);
         }
     }
+
+    @Test
+    public void sumBetweenMinMax() {
+        int[] massive = {84, 46, 57, 63,55,66,99,22,74,62,37,42,19,72,42};
+        assertEquals(237,mcLevelB.sumBetweenMinMax(massive));
+    }
 }
