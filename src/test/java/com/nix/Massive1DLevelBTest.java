@@ -81,4 +81,10 @@ public class Massive1DLevelBTest {
         int[] expected = {4,5};
         assertArrayEquals(expected,mcLevelB.getRangeBetweenMinMax(massive));
     }
+
+    @Test
+    public void findClosedToMean() {
+        int[] massive = {3,7,1,6,8,2};
+        assertEquals(3,mcLevelB.findClosedToMean(massive));
+    }
 }

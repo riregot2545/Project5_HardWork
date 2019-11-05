@@ -178,4 +178,20 @@ public class Massive1DLevelB {
         }
         return Arrays.copyOfRange(range,0,j);
     }
+
+    /*47*/
+    public int findClosedToMean(int[] massive){
+        double avg = 0;
+        for (int i = 0; i < massive.length; i++) {
+            avg+=massive[i];
+        }
+        avg/=massive.length;
+        int closed = Integer.MIN_VALUE;
+        for (int i = 0; i < massive.length; i++) {
+            if(Math.abs(massive[i]-avg)<(avg-closed)) {
+                closed = massive[i];
+            }
+        }
+        return closed;
+    }
 }
