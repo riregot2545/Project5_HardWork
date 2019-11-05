@@ -12,4 +12,11 @@ public class Massive1DLevelCTest {
         int[] massiveOfPoints = {2,4,5,1,1,1,2,3,3,4};
         assertEquals(2f,mcLevelC.findMinRadius(massiveOfPoints),0f);
     }
+
+    @Test
+    public void deleteDublicats() {
+        int[] massive = {2,4,5,1,1,1,2,3,3,4};
+        int[] expected = {2,4,5,1,3};
+        assertArrayEquals(expected,mcLevelC.deleteDublicats(massive));
+    }
 }
