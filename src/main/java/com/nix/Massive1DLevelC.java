@@ -55,4 +55,35 @@ public class Massive1DLevelC {
         }
         return overlapCount;
     }
+
+    /*66*/
+    public int[] findMaxGates(int[] massive){
+        //find all repeatable values
+        int [][]repeatMatrix = new int[massive.length][2];
+        int index = 0;
+        boolean isHasGate = false;
+        for (int i = 0; i < massive.length; i++) {
+            for (int j = i+1; j <massive.length ; j++) {
+                if(massive[i]==massive[j]) {
+                    isHasGate = true;
+                    repeatMatrix[index][0]=i;
+                    repeatMatrix[index][1]=j;
+                }
+            }
+            if(isHasGate)
+                index++;
+            isHasGate = false;
+        }
+
+        int maxLength = Integer.MIN_VALUE;
+        int[] maxLengthPart = {};
+        for (int i = 0; i < index+1; i++) {
+            int length =  repeatMatrix[i][1]-repeatMatrix[i][0];
+            if(maxLength<(length)) {
+                maxLength = length;
+                maxLengthPart = repeatMatrix[i];
+            }
+        }
+        return Arrays.copyOfRange(massive,Math.min(maxLengthPart[0],maxLengthPart[1]),Math.max(maxLengthPart[0],maxLengthPart[1])+1);
+    }
 }

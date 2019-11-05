@@ -26,4 +26,15 @@ public class Massive1DLevelCTest {
         int[] massiveB = {6,7,8,9,10,11,12,13};
         assertEquals(5,mcLevelC.overlapCount(massiveA,massiveB));
     }
+
+    @Test
+    public void findMaxGates() {
+        int[] massive = {2,4,5,7,1,1,2,3,3,4};
+        int[] expected = {4,5,7,1,1,2,3,3,4};
+        assertArrayEquals(expected,mcLevelC.findMaxGates(massive));
+
+        massive = new int[]{7, 6, 8,7,4,2,3,9,4};
+        expected = new int[]{4,2,3,9,4};
+        assertArrayEquals(expected,mcLevelC.findMaxGates(massive));
+    }
 }
