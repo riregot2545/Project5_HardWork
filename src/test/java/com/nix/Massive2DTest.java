@@ -19,4 +19,17 @@ public class Massive2DTest {
             assertArrayEquals(expected[i],actual[i]);
         }
     }
+
+    @Test
+    public void buildAngle() {
+        int size = 4;
+        int[][] expected ={ {4,0,0,0},
+                            {3,4,0,0},
+                            {2,3,4,0},
+                            {1,2,3,4}} ;
+        int[][] actual = mass2D.buildAngle(4);
+        for (int i = 0; i < size; i++) {
+            assertArrayEquals(expected[i],actual[i]);
+        }
+    }
 }

@@ -15,4 +15,15 @@ public class Massive2D {
         }
         return matrix;
     }
+
+    /*84*/
+    public int[][] buildAngle(int size){
+        int[][] matrix = new int[size][size];
+        for (int i = 0; i < size; i++) {
+            for (int j = i,v=size; j < size; j++,v--) {
+                matrix[j][i] = v;
+            }
+        }
+        return matrix;
+    }
 }
