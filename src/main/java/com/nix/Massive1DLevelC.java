@@ -30,4 +30,29 @@ public class Massive1DLevelC {
         }
         return Arrays.copyOfRange(withoutDubs,0,index);
     }
+
+    /*59*/
+    public int overlapCount(int[] massiveA, int[] massiveB){
+        int overlapCount = 0;
+        int[] maxLengthMass;
+        int[] minLengthMass;
+        if(massiveA.length>massiveB.length) {
+            maxLengthMass = massiveA;
+            minLengthMass = massiveB;
+        }
+        else {
+            maxLengthMass = massiveB;
+            minLengthMass = massiveA;
+        }
+
+        for (int i = 0; i <maxLengthMass.length ; i++) {
+            for (int j = 0; j < minLengthMass.length; j++) {
+                if(maxLengthMass[i]==minLengthMass[j]) {
+                    overlapCount++;
+                    break;
+                }
+            }
+        }
+        return overlapCount;
+    }
 }

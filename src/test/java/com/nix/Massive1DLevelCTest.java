@@ -19,4 +19,11 @@ public class Massive1DLevelCTest {
         int[] expected = {2,4,5,1,3};
         assertArrayEquals(expected,mcLevelC.deleteDublicats(massive));
     }
+
+    @Test
+    public void overlapCount() {
+        int[] massiveA = {1,2,3,4,5,6,7,8,9,10};
+        int[] massiveB = {6,7,8,9,10,11,12,13};
+        assertEquals(5,mcLevelC.overlapCount(massiveA,massiveB));
+    }
 }
