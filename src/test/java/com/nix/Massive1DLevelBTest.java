@@ -74,4 +74,11 @@ public class Massive1DLevelBTest {
         int[] massive = {84, 46, 57, 63,55,66,99,22,74,62,37,42,19,72,42};
         assertEquals(237,mcLevelB.sumBetweenMinMax(massive));
     }
+
+    @Test
+    public void getRangeBetweenMinMax() {
+        int[] massive = {3,7,1,6,8,2};
+        int[] expected = {4,5};
+        assertArrayEquals(expected,mcLevelB.getRangeBetweenMinMax(massive));
+    }
 }

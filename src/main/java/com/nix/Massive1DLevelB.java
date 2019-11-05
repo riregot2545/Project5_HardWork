@@ -152,4 +152,30 @@ public class Massive1DLevelB {
         }
         return sum;
     }
+    /*46*/
+    public int[] getRangeBetweenMinMax(int [] massive){
+        int max = Integer.MIN_VALUE;
+        int min = Integer.MAX_VALUE;
+        int [] range;
+        for (int i = 0; i < massive.length; i++) {
+            if(massive[i]>max){
+                max = massive[i];
+            }
+            if(massive[i]<min){
+                min = massive[i];
+            }
+        }
+        range = new int[max-min];
+        int j=0;
+        int[] arrCopy = Arrays.copyOf(massive,massive.length);
+        Arrays.sort(arrCopy);
+        for (int i = min+1; i < max && i<massive.length; i++) {
+            int searchRes = Arrays.binarySearch(arrCopy,i);
+            if(searchRes<0) {
+                range[j] = i;
+                j++;
+            }
+        }
+        return Arrays.copyOfRange(range,0,j);
+    }
 }
